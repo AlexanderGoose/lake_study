@@ -1,0 +1,42 @@
+---
+title: "visuals"
+output: html_document
+date: "2024-10-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# load libraries
+library(ggplot2)
+```
+
+Testing the use of a .md file to showcase results. This document utilizes depth_5 df, which is an extension of dt3 that only pulled the info for depths of 5.
+
+```{r depth_5}
+summary(depth_5)
+```
+
+### Sample Plot
+
+This plot
+
+```{r depth_5, echo=FALSE}
+ggplot(depth_5, aes(x = Year, y = Temp_C)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  geom_line() + 
+  theme_minimal()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Secchi Measurements
+
+Here we see that over the last 60 years, the secchi depth has decreased drastically. This means that the water is becoming harder to see into, and could be a great thing to explore. Why may this be happening? There could be increased algae and other life due to warming temperatures, less time with ice cover allowing more life to thrive, or due to an increase in dissolved organic carbon.
+
+```{r dt1, echo=F}
+ggplot(dt1, aes(x=Year, 
+                y=Secchi_m)) + 
+  geom_point() + 
+  geom_smooth(method=lm)
+```
