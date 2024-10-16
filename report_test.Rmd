@@ -8,13 +8,14 @@ date: "2024-10-03"
 knitr::opts_chunk$set(echo = TRUE)
 # load libraries
 library(ggplot2)
+library(dplyr)
+```
+
+```{r load_data, include=F}
+load("all_data.RData")
 ```
 
 Testing the use of a .md file to showcase results. This document utilizes depth_5 df, which is an extension of dt3 that only pulled the info for depths of 5.
-
-```{r depth_5}
-summary(depth_5)
-```
 
 ### Sample Plot
 
